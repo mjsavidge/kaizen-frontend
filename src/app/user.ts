@@ -1,6 +1,6 @@
 export class User{
-    name: String;
-    username: String;
-    password: String;
-    email: String;
+    name: string;
+    username: string;
+    password: string;
+    email: string;
 }
