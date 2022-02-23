@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+
+@font-face {
+    font-family: Monospace;
+    src: url(url) format('truetype');
+}
+
+.Monospace{
+    font-family: Monospace;
+}
+
+:host {
+    font-family: Monospace;
+    font-size: 14px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+ 
+
+  .toolbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #3d3d3d;
+    color: white;
+    font-weight: 600;
+  }
+
+  
+
+  .menu-container{
+      cursor: pointer;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .search-label{
+      font-family: Monospace;
+      color: white;
+  }
+
+  .search-field {
+      margin: 0 auto;
+      color: white;
+  }
+
+  .account-btn{
+      margin-right: 5px;
+  }
+  
+  .sign-up-btn{
+      font-family: Monospace;
+      color: white;
+      margin-left: 5px;
+      margin-right: 5px;
+      
+  }
+
+  .log-in-btn{
+      margin-left: 5px;
+      margin-right: 20px;
+  }
+
+  .body{
+      background-color: #4b4b4b;
+  }
+
+
+
+  
+
+ 
+
+  
+
+  
+
+  
+    
+
+ 
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+  
+  

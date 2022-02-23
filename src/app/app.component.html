@@ -1,0 +1,90 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+  
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <div class="menu-container" role="navigation" onclick="">
+    <button mat-icon-button [matMenuTriggerFor]="menu" mat-mini-fab color="primary" aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>navigation</mat-icon>
+        <span>Explore</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>mark_email_read</mat-icon>
+        <span>Challenges Sent</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>email</mat-icon>
+        <span>Challenge Requests</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>supervisor_account</mat-icon>
+        <span>Subscriptions</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>calendar_today</mat-icon>
+        <span>History</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>thumb_up</mat-icon>
+        <span>Liked Challenges</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>download_done</mat-icon>
+        <span>Completed Challenges</span>
+      </button>
+    </mat-menu>
+  </div>
+  <span>Challenger Clash</span>
+  <div class="search-field" >
+    <mat-form-field  appearance="fill">
+      <mat-label class="search-label">Search Challeneges</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button class="serach-btn"  mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+    <button class="account-btn"  mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button class="sign-up-btn" mat-raised-button color="primary">Sign Up</button>
+    <button class="log-in-btn" mat-raised-button color="grey">Log In</button>
+</div>
+
+<body class="body">
+  
+  
+
+</body>
+  
+
+  
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
