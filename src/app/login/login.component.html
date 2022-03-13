@@ -1,25 +1,11 @@
-<h2 class="title" mat-dialog-title>Sign Up</h2>
+
+<h2 class="title" mat-dialog-title>Log In</h2>
 <mat-dialog-content class="reg-form">
-    <p>
-        <mat-form-field class="name-field" appearance="fill">
-            <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="user.name">
-        </mat-form-field>
-    
-    </p>
-    
-    <p>
-        <mat-form-field class="username-field" appearance="fill">
-            <mat-label>User Name</mat-label>
-            <input matInput [(ngModel)]="user.username">
-        </mat-form-field>
-    
-    </p>
     
     <p>
         <mat-form-field class="email-field" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput [(ngModel)]="user.email">
+            <input matInput [(ngModel)]="userLogin.usernameOrEmail">
         </mat-form-field>
     
     </p>
@@ -27,7 +13,7 @@
     <p>
         <mat-form-field class="pwd-field" appearance="fill">
             <mat-label>Password</mat-label>
-            <input type="password" matInput [(ngModel)]="user.password">
+            <input type="password" matInput [(ngModel)]="userLogin.password">
         </mat-form-field>
     
     </p>
@@ -36,7 +22,7 @@
             class="sign-up-btn" 
             mat-raised-button color="primary"
             [mat-dialog-close]="true"
-            (click)="onSubmit()">Sign Up</button>
+            (click)="onSignIn()">Log In</button>
         <button mat-raised-button color="grey" mat-dialog-close="">Cancel</button>
     </mat-dialog-actions>
 

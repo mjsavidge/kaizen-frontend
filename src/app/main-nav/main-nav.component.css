@@ -1,0 +1,46 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+.search-label{
+  font-family: Monospace;
+  font-size: 14px;
+  color: white;
+}
+
+.search-div {
+  margin: 0 auto;
+  color: white;
+}
+
+.account-btn{
+  margin-right: 5px;
+}
+
+.sign-up-btn{
+  font-family: Monospace;
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+
+.log-in-btn{
+  margin-left: 5px;
+  margin-right: 20px;
+}

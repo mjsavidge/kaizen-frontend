@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent implements OnInit {
 
@@ -20,13 +20,13 @@ export class RegistrationComponent implements OnInit {
   saveUser(){
     this.registerService.createUser(this.user).subscribe(data => {
       console.log(data);
-      this.gotToHome();
-    }, error => console.log(error));
+      
+    }, 
+    error => console.log(error)
+    );
+    alert("Please check email to finish sign up.");
   }
 
-  gotToHome(){
-    this.router.navigate(['http://localhost/4200'])
-  }
 
   onSubmit(){
     this.saveUser();
