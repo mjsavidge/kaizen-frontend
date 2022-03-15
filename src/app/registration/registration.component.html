@@ -1,42 +1,25 @@
 <h2 class="title" mat-dialog-title>Sign Up</h2>
 <mat-dialog-content class="reg-form">
-    <p>
-        <mat-form-field class="name-field" appearance="fill">
-            <mat-label>Name</mat-label>
-            <input matInput [(ngModel)]="user.name">
-        </mat-form-field>
-    
-    </p>
-    
-    <p>
-        <mat-form-field class="username-field" appearance="fill">
-            <mat-label>User Name</mat-label>
-            <input matInput [(ngModel)]="user.username">
-        </mat-form-field>
-    
-    </p>
-    
-    <p>
+    <form>
         <mat-form-field class="email-field" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput [(ngModel)]="user.email">
+            <input matInput type="email" #userEmail required>
         </mat-form-field>
-    
-    </p>
-    
-    <p>
+
         <mat-form-field class="pwd-field" appearance="fill">
             <mat-label>Password</mat-label>
-            <input type="password" matInput [(ngModel)]="user.password">
+            <input matInput type="password"  #userPassword required>
         </mat-form-field>
-    
-    </p>
+    </form>
+        
+
     <mat-dialog-actions align="center">
         <button 
             class="sign-up-btn" 
             mat-raised-button color="primary"
             [mat-dialog-close]="true"
-            (click)="onSubmit()">Sign Up</button>
+            (click)="authService.SignUp(userEmail.value, userPassword.value)"
+            >Sign Up</button>
         <button mat-raised-button color="grey" mat-dialog-close="">Cancel</button>
     </mat-dialog-actions>
 

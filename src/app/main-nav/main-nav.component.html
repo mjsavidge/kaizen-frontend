@@ -42,7 +42,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>
-        <img src="assets/img/Challenger.png" alt="placeholder" height="50px" width="100px">
+        <img src="assets/img/Challenger.png" alt="Challenger Clash" height="50px" width="100px">
       </span>
       <div class="search-div" >
         <mat-form-field class="search-field"  appearance="fill">
@@ -60,16 +60,23 @@
         </button>
 
         <button
-          *ngIf="visible"
+          *ngIf="authService.isLoggedIn == false"
           (click)="openSignUp()"
           class="sign-up-btn" mat-raised-button color="primary"
           >Sign Up</button>
 
         <button
-          *ngIf="visible"
+          *ngIf="authService.isLoggedIn == false"
           (click)="openLogIn()" 
           class="log-in-btn" mat-raised-button color="grey"
           >Log In</button>
+
+          <button
+          *ngIf="authService.isLoggedIn == true"
+          (click)="authService.SignOut()" 
+          class="log-in-btn" mat-raised-button color="grey"
+          >SignOut</button>
+          
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>

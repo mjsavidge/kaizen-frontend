@@ -5,7 +5,7 @@
     <p>
         <mat-form-field class="email-field" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput [(ngModel)]="userLogin.usernameOrEmail">
+            <input matInput required type="text" placeholder="Username" #userName>
         </mat-form-field>
     
     </p>
@@ -13,7 +13,7 @@
     <p>
         <mat-form-field class="pwd-field" appearance="fill">
             <mat-label>Password</mat-label>
-            <input type="password" matInput [(ngModel)]="userLogin.password">
+            <input matInput type="password" required placeholder="Password" #userPassword>
         </mat-form-field>
     
     </p>
@@ -22,7 +22,9 @@
             class="sign-up-btn" 
             mat-raised-button color="primary"
             [mat-dialog-close]="true"
-            (click)="onSignIn()">Log In</button>
+            value="Log in"
+            (click)="authService.SignIn(userName.value, userPassword.value)"
+            >Log In</button>
         <button mat-raised-button color="grey" mat-dialog-close="">Cancel</button>
     </mat-dialog-actions>
 

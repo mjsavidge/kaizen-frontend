@@ -5,6 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
+import { AuthService } from './shared/services/auth.service';
+
+
+
 import { FormsModule} from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatButtonModule } from '@angular/material/button'
@@ -25,6 +35,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 
 
@@ -35,7 +46,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     FooterComponent,
     MainNavComponent,
-    DashboardComponent
+    DashboardComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +66,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatGridListModule,
     LayoutModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
