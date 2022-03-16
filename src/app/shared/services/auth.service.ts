@@ -1,6 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from '../services/user';
-import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { 
@@ -47,18 +46,22 @@ export class AuthService {
   }
 
   // sign up with email and Password
-  SignUp(email: string, password: string){
+  SignUp(email: string, password: string, username: string){
     return this.afAuth
     .createUserWithEmailAndPassword(email, password)
-    .then((result) => {
+    .then((result) =>{
       /* Call the SendVerificaitonMail() function when new user sign 
       up and returns promise */
+      result.user?.updateProfile({
+        displayName: username
+      })
       this.SendVerificationMail();
       this.SetUserData(result.user);
     })
     .catch((error) => {
       window.alert(error.message);
     });
+
   }
 
   SendVerificationMail(){

@@ -1,6 +1,12 @@
 <h2 class="title" mat-dialog-title>Sign Up</h2>
 <mat-dialog-content class="reg-form">
     <form>
+
+        <mat-form-field class="email-field" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" #userName required>
+        </mat-form-field>
+
         <mat-form-field class="email-field" appearance="fill">
             <mat-label>Email</mat-label>
             <input matInput type="email" #userEmail required>
@@ -18,7 +24,7 @@
             class="sign-up-btn" 
             mat-raised-button color="primary"
             [mat-dialog-close]="true"
-            (click)="authService.SignUp(userEmail.value, userPassword.value)"
+            (click)="authService.SignUp(userEmail.value, userPassword.value, userName.value)"
             >Sign Up</button>
         <button mat-raised-button color="grey" mat-dialog-close="">Cancel</button>
     </mat-dialog-actions>

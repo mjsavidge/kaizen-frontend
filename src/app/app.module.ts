@@ -36,6 +36,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import {MatTooltipModule} from '@angular/material/tooltip'
 
 
 
@@ -67,6 +68,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     LayoutModule,
     MatToolbarModule,
     MatListModule,
+    MatTooltipModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
