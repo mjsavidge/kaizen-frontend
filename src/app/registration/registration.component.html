@@ -1,6 +1,15 @@
 <h2 class="title" mat-dialog-title>Sign Up</h2>
-<mat-dialog-content class="reg-form">
+<mat-dialog-content class="reg-form" id="reg-form">
     <form>
+
+        <div style="text-align:center">
+            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+            <div><img [src]="url" *ngIf="url"></div>
+            <p>
+                <input type="file" (change)="selectFile($event)" #profileURL>
+            </p>
+        </div>
+                
 
         <mat-form-field class="email-field" appearance="fill">
             <mat-label>Username</mat-label>
@@ -24,7 +33,7 @@
             class="sign-up-btn" 
             mat-raised-button color="primary"
             [mat-dialog-close]="true"
-            (click)="authService.SignUp(userEmail.value, userPassword.value, userName.value)"
+            (click)="authService.SignUp(userEmail.value, userPassword.value, userName.value, profileURL.value)"
             >Sign Up</button>
         <button mat-raised-button color="grey" mat-dialog-close="">Cancel</button>
     </mat-dialog-actions>

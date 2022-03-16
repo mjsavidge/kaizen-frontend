@@ -37,6 +37,7 @@ import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import {MatTooltipModule} from '@angular/material/tooltip'
+import {MatProgressBarModule} from '@angular/material/progress-bar'; 
 
 
 
@@ -69,6 +70,7 @@ import {MatTooltipModule} from '@angular/material/tooltip'
     MatToolbarModule,
     MatListModule,
     MatTooltipModule,
+    MatProgressBarModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
