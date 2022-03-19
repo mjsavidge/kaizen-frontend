@@ -7,17 +7,21 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/compat/firestore';
 
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   userData: any;
 
+
   constructor(
     public router: Router,
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
-    public ngZone: NgZone
+    public ngZone: NgZone,
+    public storage: AngularFireStorage
   ) { 
     this.afAuth.authState.subscribe((user) => {
       if(user) {
@@ -46,18 +50,24 @@ export class AuthService {
   }
 
   // sign up with email and Password
-  SignUp(email: string, password: string, username: string, profilePic: string){
+  SignUp(email: string, password: string, username: string, profilePic: any){
     return this.afAuth
     .createUserWithEmailAndPassword(email, password)
     .then((result) =>{
       /* Call the SendVerificaitonMail() function when new user sign 
       up and returns promise */
+      
       result.user?.updateProfile({
         displayName: username,
-        photoURL: profilePic
       })
       this.SendVerificationMail();
       this.SetUserData(result.user);
+
+      this.storage.ref('user/' + result.user?.uid + '/profile.png').put(profilePic).then(function(){
+        console.log('Successfully uploaded profile picture')
+      }).catch(error => {
+        console.log(error.message);
+      })
     })
     .catch((error) => {
       window.alert(error.message);
@@ -93,7 +103,6 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };
     return userRef.set(userData, {

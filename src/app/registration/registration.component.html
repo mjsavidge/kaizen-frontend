@@ -2,14 +2,18 @@
 <mat-dialog-content class="reg-form" id="reg-form">
     <form>
 
-        <div style="text-align:center">
-            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
-            <div><img [src]="url" *ngIf="url"></div>
-            <p>
-                <input type="file" (change)="selectFile($event)" #profileURL>
-            </p>
-        </div>
+   
+            <mat-card style="height: 100px; margin-bottom: 10px;">
                 
+                <div>
+                    <img [src]="url" alt="testing" style="width: 10px; height: 10px">  
+                </div> 
+                       
+            <button mat-button color="primary" (click)="fileInput.click()" style="position: absolute; bottom: 0; left: 25%; ">
+                <mat-icon>cloud_upload</mat-icon> Select Profile Picture
+            </button> 
+            <input type="file" (change)="onFileSelected($event)" name="fileInput"  accept="image/*" #fileInput style="display:none;">
+            </mat-card>
 
         <mat-form-field class="email-field" appearance="fill">
             <mat-label>Username</mat-label>
@@ -33,7 +37,7 @@
             class="sign-up-btn" 
             mat-raised-button color="primary"
             [mat-dialog-close]="true"
-            (click)="authService.SignUp(userEmail.value, userPassword.value, userName.value, profileURL.value)"
+            (click)="authService.SignUp(userEmail.value, userPassword.value, userName.value, file)"
             >Sign Up</button>
         <button mat-raised-button color="grey" mat-dialog-close="">Cancel</button>
     </mat-dialog-actions>
