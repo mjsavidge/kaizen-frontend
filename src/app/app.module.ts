@@ -37,7 +37,8 @@ import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import {MatTooltipModule} from '@angular/material/tooltip'
-import {MatProgressBarModule} from '@angular/material/progress-bar'; 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { UploadVideoComponent } from './upload-video/upload-video.component'; 
 
 
 
@@ -49,7 +50,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     FooterComponent,
     MainNavComponent,
     DashboardComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    UploadVideoComponent
   ],
   imports: [
     BrowserModule,
