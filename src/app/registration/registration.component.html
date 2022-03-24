@@ -1,19 +1,15 @@
 <h2 class="title" mat-dialog-title>Sign Up</h2>
 <mat-dialog-content class="reg-form" id="reg-form">
     <form>
-
-   
-            <mat-card style="height: 100px; margin-bottom: 10px;">
-                
-                <div>
-                    <img [src]="url" alt="testing" style="width: 10px; height: 10px">  
-                </div> 
-                       
-            <button mat-button color="primary" (click)="fileInput.click()" style="position: absolute; bottom: 0; left: 25%; ">
-                <mat-icon>cloud_upload</mat-icon> Select Profile Picture
-            </button> 
-            <input type="file" (change)="onFileSelected($event)" name="fileInput"  accept="image/*" #fileInput style="display:none;">
-            </mat-card>
+        <mat-card style="height: 90px; margin-bottom: 10px;">
+            <div>
+                <img [src]="url" alt="testing" style="width: 40px; height: 40px; border-radius: 50%; ">  
+            </div>         
+        <button mat-button color="primary" (click)="fileInput.click()" style="position: absolute; bottom: 0; left: 25%; ">
+            <mat-icon>cloud_upload</mat-icon> Select Profile Picture
+        </button> 
+        <input type="file" (change)="onFileSelected($event)" name="fileInput"  accept="image/*" #fileInput style="display:none;">
+        </mat-card>
 
         <mat-form-field class="email-field" appearance="fill">
             <mat-label>Username</mat-label>
@@ -27,11 +23,10 @@
 
         <mat-form-field class="pwd-field" appearance="fill">
             <mat-label>Password</mat-label>
-            <input matInput type="password"  #userPassword required>
+            <input minlength="10" matInput type="password"  #userPassword required>
         </mat-form-field>
     </form>
-        
-
+      
     <mat-dialog-actions align="center">
         <button 
             class="sign-up-btn" 
