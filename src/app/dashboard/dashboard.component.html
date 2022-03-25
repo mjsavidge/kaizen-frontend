@@ -1,50 +1,10 @@
-<div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-
-
-          <div>Card Content Here</div>
-
-
-          <div *ngIf="card.title == 'Profile'">
-            <div *ngIf="authService.userData as user">
-              <div class="col-md-12">
-                <div class="media">
-                  <img class="align-self-start mr-5 img-thumbnail rounded-circle" 
-                  
-                  src="{{user.photoURL}}"
-                    alt="{{user.displayName}}">
-                  <div class="media-body">
-                    <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                    <p>User ID: <strong>{{user.uid}}</strong></p>
-                    <p>Email: <strong>{{user.email}}</strong></p>
-                    <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<mat-tab-group mat-align-tabs="center" #tabRef>
+  <mat-tab #library label="Library"> Content 1 </mat-tab>
+  <mat-tab #upload label="Upload Challenge"> <app-upload-video></app-upload-video> </mat-tab>
+  <mat-tab #profile label="Profile"> Content 3 </mat-tab>
+  <mat-tab #web3 label="Web 3.0 setup">content 4</mat-tab>
+</mat-tab-group>
 
 
 
-          
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+

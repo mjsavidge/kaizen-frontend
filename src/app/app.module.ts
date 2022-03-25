@@ -54,7 +54,10 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation'; 
-
+import {MatTabsModule} from '@angular/material/tabs';
+import { ProfileComponent } from './profile/profile.component';
+import { LibraryComponent } from './library/library.component';
+import { Web3Component } from './web3/web3.component'; 
 
 
 @NgModule({
@@ -66,7 +69,10 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MainNavComponent,
     DashboardComponent,
     VerifyEmailComponent,
-    UploadVideoComponent
+    UploadVideoComponent,
+    ProfileComponent,
+    LibraryComponent,
+    Web3Component
   ],
   imports: [
     BrowserModule,
@@ -108,6 +114,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    MatTabsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

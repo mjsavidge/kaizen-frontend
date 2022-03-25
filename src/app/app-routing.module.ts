@@ -6,7 +6,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'verify-email', component: VerifyEmailComponent}
+  {path: 'verify-email', component: VerifyEmailComponent},
+  
 ];
 
 @NgModule({

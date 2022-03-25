@@ -1,1 +1,7 @@
-<p>upload-video works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title *ngIf="authService.userData as user"> Hello {{user.displayName}} ready to upload your next challenge?</mat-card-title>
+    </mat-card-header>
+</mat-card>
+ 
+
