@@ -3,8 +3,11 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'side' : 'side'"
       [opened]="(isHandset$ | async) === true">
-    <mat-toolbar *ngIf="authService.userData as user">Hello {{ user.displayName }}</mat-toolbar>
+    <mat-toolbar *ngIf="authService.userData as user">
+      <img mat-card-avatar src="https://m.media-amazon.com/images/I/61q8w4TRAbL._AC_SL1500_.jpg">
+      {{ user.displayName }}</mat-toolbar>
     <mat-nav-list>
+      <mat-divider></mat-divider>
       <a style="font-size: 14px" mat-list-item href="#">
         <mat-icon style=" padding-right: 10px">home</mat-icon>
         Home
@@ -13,23 +16,30 @@
         <mat-icon style=" padding-right: 10px">navigation</mat-icon>
         Explore</a>
       <a style="font-size: 14px" mat-list-item href="#">
+        <mat-icon style=" padding-right: 10px">calendar_today</mat-icon>
+        History</a>
+      
+      <mat-divider ></mat-divider>
+        
+      <a style="font-size: 14px" mat-list-item href="#">
         <mat-icon style=" padding-right: 10px">mark_email_read</mat-icon>
         Challenges Sent</a>
       <a style="font-size: 14px" mat-list-item href="#">
         <mat-icon style=" padding-right: 10px">email</mat-icon>
         Challenges Requests</a>
       <a style="font-size: 14px" mat-list-item href="#">
-        <mat-icon style=" padding-right: 10px">supervisor_account</mat-icon>
-        Subscriptions</a>
-      <a style="font-size: 14px" mat-list-item href="#">
-        <mat-icon style=" padding-right: 10px">calendar_today</mat-icon>
-         History</a>
-      <a style="font-size: 14px" mat-list-item href="#">
         <mat-icon style=" padding-right: 10px">thumb_up</mat-icon>
         Liked Challenges</a>
       <a style="font-size: 14px" mat-list-item href="#">
         <mat-icon style=" padding-right: 10px">download_done</mat-icon>
-        Challenges Completed</a>  
+        Challenges Completed</a> 
+
+      <mat-divider></mat-divider>  
+        
+      <a style="font-size: 14px" mat-list-item href="#">
+        <mat-icon style=" padding-right: 10px">supervisor_account</mat-icon>
+        Subscriptions</a>
+       
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

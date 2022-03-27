@@ -1,7 +1,21 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title *ngIf="authService.userData as user"> Hello {{user.displayName}} ready to upload your next challenge?</mat-card-title>
+<mat-card mat-card class="upload-card">
+    <mat-card-header class="upload-card-title">
+        <img mat-card-avatar src="https://m.media-amazon.com/images/I/61q8w4TRAbL._AC_SL1500_.jpg">
+        <mat-card-title  *ngIf="authService.userData as user">  {{user.displayName}} ready to upload your next challenge?</mat-card-title>
     </mat-card-header>
+    
+    <mat-card-content>
+        <mat-card class="sub-left-upload-card">
+
+        </mat-card>
+
+        <mat-card class="sub-right-upload-card">
+
+        </mat-card>
+    </mat-card-content>
+    <mat-card-footer class="upload-footer">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
 </mat-card>
  
 

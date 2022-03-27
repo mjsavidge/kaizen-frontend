@@ -1,0 +1,27 @@
+.upload-card{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    width: 80rem;
+    height: 30rem;
+}
+
+.sub-left-upload-card{
+    float: left;
+    width: 40rem;
+    height: 23rem;
+}
+
+.sub-right-upload-card{
+    float: right;
+    width: 35rem;
+    height: 23rem;
+}
+
+.upload-card-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
